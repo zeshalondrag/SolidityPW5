@@ -5,7 +5,6 @@ from contract_info import abi, contract_address
 from web3.middleware import geth_poa_middleware
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
 
 w3 = Web3(HTTPProvider('http://127.0.0.1:8545'))
 

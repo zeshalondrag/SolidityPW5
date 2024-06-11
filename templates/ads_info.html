@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Текущие объявления о продаже недвижимости</title>
+</head>
+<body>
+    <div class="container1">
+        <h1 class="balanceName">Текущие объявления о продаже недвижимости</h1>
+        <ul class="ul1">
+            {% for ad in ads %}
+            <li>ID: {{ ad[6] }}</li>
+            <li>Владелец: {{ ad[0] }}<li>
+            <li>Цена: {{ ad[2] }}</li>
+            <li>Недвижимость: {{ ad[3] }}</li>
+            <li>Дата/время: {{ ad[4] }}</li>
+            <li>Статус: {{ ad[5] }}</li>
+            {% endfor %}
+        </ul>
+        <a class="back" href="{{ url_for('dashboard') }}">Назад</a>
+    </div>
+</body>
+</html>

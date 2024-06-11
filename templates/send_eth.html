@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Отправка эфира</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="balanceName">Отправка эфира</h1>
+        <form action="{{ url_for('send_eth') }}" method="post">
+            <label for="amount">Введите количество эфира для отправки:</label><br>
+            <input type="text" id="amount" name="amount"><br>
+            <input type="submit" value="Отправить">
+        </form>
+        <a class="back" href="{{ url_for('dashboard') }}">Назад</a>
+    </div>
+</body>
+</html>

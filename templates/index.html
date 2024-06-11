@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Панель управления</title>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li>{{ public_key }}</li>
+            <li><a href="{{ url_for('send_eth') }}">Отправить эфиры</a></li>
+            <li><a href="{{ url_for('contract_balance') }}">Посмотреть баланс смарт-контракта</a></li>
+            <li><a href="{{ url_for('account_balance') }}">Посмотреть баланс аккаунта</a></li>
+            <li><a href="{{ url_for('withdraw') }}">Снять средства</a></li>
+            <li><a href="{{ url_for('create_estate') }}">Создание недвижимости</a></li>
+            <li><a href="{{ url_for('create_ad') }}">Создание объявления</a></li>
+            <li><a href="{{ url_for('update_status') }}">Изменения статуса недвижимости</a></li>
+            <li><a href="{{ url_for('update_ad_status') }}">Изменения статуса объявления</a></li>
+            <li><a href="{{ url_for('buy_estate') }}">Покупка недвижимости</a></li>
+            <li><a href="{{ url_for('estates_info') }}">Информация о недвижимостях</a></li>
+            <li><a href="{{ url_for('ads_info') }}">Информация о объявлениях</a></li>
+            <li><a href="{{ url_for('logout') }}">Выход</a></li>
+        </ul>
+    </div>
+</body>
+</html>

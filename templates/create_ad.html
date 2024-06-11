@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Создать объявление</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="balanceName">Создать объявление</h1>
+        <form method="POST">
+            <div>
+                <label for="id_estate">ID недвижимости:</label>
+                <input type="number" id="id_estate" name="id_estate" required>
+            </div>
+            <div>
+                <label for="price">Цена продажи:</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+            <button type="submit">Создать</button>
+        </form>
+        <a class="back" href="{{ url_for('dashboard') }}">Назад</a>
+    </div>
+</body>
+</html>

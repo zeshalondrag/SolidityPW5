@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Авторизация и Регистрация</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <input type="radio" id="login-tab" name="tab" checked>
+            <input type="radio" id="signup-tab" name="tab">
+            <div class="button-box">
+                <label for="login-tab" class="toggle-btn">Авторизация</label>
+                <label for="signup-tab" class="toggle-btn">Регистрация</label>
+                <div id="btn"></div>
+            </div>
+            <form id="login" class="input-group" action="{{ url_for('login') }}" method="POST">
+                <input type="text" name="public_key" class="input-field" placeholder="Публичный ключ" required>
+                <input type="password" name="password" class="input-field" placeholder="Пароль" required>
+                <button type="submit" class="submit-btn">Авторизоваться</button>
+            </form>
+            <form id="signup" class="input-group" action="{{ url_for('register') }}" method="POST">
+                <input type="password" name="password" class="input-field" placeholder="Придумайте пароль" required>
+                <button type="submit" class="submit-btn">Зарегистрироваться</button>
+            </form>
+        </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

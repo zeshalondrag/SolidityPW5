@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Изменения статуса недвижимости</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="balanceName">Изменения статуса недвижимости</h1>
+        <form method="post">
+            <label for="id_estate">Недвижимость ID:</label>
+            <input type="text" id="id_estate" name="id_estate" required><br><br>
+            <label for="new_status">Новый статус:</label>
+            <select id="new_status" name="new_status" required>
+                <option value="0">Неактивный</option>
+                <option value="1">Активный</option>
+            </select><br><br>
+            <button type="submit">Обновить статус</button>
+        </form>
+        <a class="back" href="{{ url_for('dashboard') }}">Назад</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Изменения статуса объявления</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="balanceName">Изменения статуса объявления</h2>
+        <form method="POST">
+            <label for="id_ad">Объявления ID:</label><br>
+            <input type="number" id="id_ad" name="id_ad" required><br><br>
+            
+            <label for="new_status">Новый статус:</label><br>
+            <select id="new_status" name="new_status" required>
+                <option value="0">Закрыто</option>
+                <option value="1">Открыто</option>
+            </select><br><br>
+    
+            <button type="submit">Update Status</button>
+        </form>
+        <a class="back" href="{{ url_for('dashboard') }}">Назад</a>
+    </div>
+</body>
+</html>

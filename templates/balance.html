@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Баланс</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="balanceName">Баланс {{ balance_type == 'account' and 'аккаунта' or 'контракта' }}</h1>
+        <p class="balances">Баланс: {{ balance }} ETH</p>
+        <a class="back" href="{{ url_for('dashboard') }}">Назад</a>
+    </div>
+</body>
+</html>
